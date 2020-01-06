@@ -11,6 +11,11 @@ const taskReducer = (state=INITIAL_STATE, action) => {
                 ...state,
                 tasks : [...state.tasks, action.payload]
             }
+        case TaskActionTypes.REMOVE_TASK_FROM_LIST : 
+            return {
+                ...state,
+                tasks : state.tasks.filter(task => task.id !== action.payload.id)
+            }
         default:
             return state;
     }

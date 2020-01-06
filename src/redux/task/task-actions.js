@@ -4,3 +4,8 @@ export const addTaskToList = task => ({
     type : TaskActionTypes.ADD_TASK_TO_LIST,
     payload : task
 });
+
+export const removeTaskFromList = task => ({
+    type : TaskActionTypes.REMOVE_TASK_FROM_LIST,
+    payload : task
+});
