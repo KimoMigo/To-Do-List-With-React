@@ -1,0 +1,12 @@
+.task-details{
+    margin: 20px auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.description{
+    width: 60%;
+}
+.date-time-picker{
+    background-color: #abc;
+}
