@@ -16,6 +16,19 @@ const taskReducer = (state=INITIAL_STATE, action) => {
                 ...state,
                 tasks : state.tasks.filter(task => task.id !== action.payload.id)
             }
+        case TaskActionTypes.CONFIRM_MODIFICATION : 
+            return {
+                ...state,
+                tasks : [...state.tasks.filter(task => task.id !== action.payload.id), action.payload]
+            }
+        case TaskActionTypes.CHANGE_EDITABLE_STATE : 
+            return {
+                ...state,
+                tasks : state.tasks.map(task => 
+                                                task.id === action.payload.id 
+                                                ? {...task,editable:!task.editable} 
+                                                : task)
+            }
         default:
             return state;
     }

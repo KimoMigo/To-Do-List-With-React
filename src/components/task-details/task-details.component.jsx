@@ -2,8 +2,6 @@ import React from 'react';
 import DateTimePicker from 'react-datetime-picker';
 
 import './task-details.styles.css';
-/*Component importing*/
-import CustomButton from '../custom-button/custom-button.component';
 /*Redux tools*/
 import {addTaskToList} from '../../redux/task/task-actions';
 import {connect} from 'react-redux';
@@ -22,6 +20,11 @@ class TaskDetails extends React.Component{
         this.setState({description:event.target.value})
     };
     handleTime = date => this.setState({dueTime:date});
+    handleClick = () => {
+        console.log('handleClick called');
+        this.setState({description:''});
+        this.props.addTask({...this.state,id:Date.now()});
+    }
     render(){
     return (
         <div className='task-details'>
@@ -36,9 +39,7 @@ class TaskDetails extends React.Component{
                 value={this.state.dueTime}
                 onChange={this.handleTime}                            
                 />
-            <CustomButton onClick={() => {
-                    this.setState({description:''});
-                    this.props.addTask({...this.state,id:Date.now()})}}>Add task to list</CustomButton>   
+            <button onClick={this.handleClick}>Add task to list</button>   
         </div>
     );
 }
