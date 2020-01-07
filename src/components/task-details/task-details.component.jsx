@@ -21,7 +21,6 @@ class TaskDetails extends React.Component{
     };
     handleTime = date => this.setState({dueTime:date});
     handleClick = () => {
-        console.log('handleClick called');
         this.setState({description:''});
         this.props.addTask({...this.state,id:Date.now()});
     }

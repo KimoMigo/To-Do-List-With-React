@@ -1,0 +1,26 @@
+.task{
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+}
+.task .task-description{
+    width: 60%;
+}
+
+.task .task-due-time{
+    width: 20%;
+}
+
+.task .edit{
+    width: 10%;
+}
+
+.task .remove{
+    width: 10%;
+}
+.task .task-description,.task-due-time,.edit,.remove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}

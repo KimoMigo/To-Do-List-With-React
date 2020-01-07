@@ -1,0 +1,25 @@
+.editable-task{
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+}
+.editable-task .task-description{
+    width: 60%;
+}
+
+.editable-task .task-due-time{
+    width: 20%;
+}
+.editable-task .confirm{
+    width: 10%;
+}
+
+.editable-task .cancel{
+    width: 10%;
+}
+.editable-task .task-description,.task-due-time,.confirm,.cancel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}

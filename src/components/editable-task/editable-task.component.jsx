@@ -19,28 +19,36 @@ class EditableTask extends React.Component{
 
     handleTime = date => this.setState({dueTime : date});
 
-    handleChange = event => {
-        event.preventDefault();
-        this.setState({description:event.target.value});
-    };
+handleChange = event => {
+    event.preventDefault();
+    this.setState({description:event.target.value});
+};
 
-    render(){
-        const {changeEditableState,confirmModification} = this.props;
-        return (
-                <div>
-                    <input
-                        type='text'
-                        value={this.state.description}
-                        autoFocus
-                        onChange={e => this.handleChange(e)}/>
-                    <DateTimePicker
-                                value={this.state.dueTime}
-                                onChange={this.handleTime}/>
-                    <button onClick={() => confirmModification({...this.props.task, description:this.state.description, dueTime:this.state.dueTime,editable:false})}>Confirm</button>
-                    <button onClick={() => changeEditableState(this.props.task)}>Cancel</button>
-                </div>
-            );
-    }
+render(){
+    const {changeEditableState,confirmModification} = this.props;
+    return (
+        <div className='editable-task'>
+           <div className='task-description'>
+               <input
+                type='text'
+                value={this.state.description}
+                autoFocus
+                onChange={e => this.handleChange(e)}/>
+           </div>
+           <div className='task-due-time'>
+               <DateTimePicker
+                value={this.state.dueTime}
+                onChange={this.handleTime}/>
+           </div>
+            <div className='confirm'>
+                <button onClick={() => confirmModification({...this.props.task, description:this.state.description, dueTime:this.state.dueTime,editable:false})}>Confirm</button>
+            </div>
+            <div className='cancel'>
+                <button onClick={() => changeEditableState(this.props.task)}>Cancel</button>
+            </div>
+        </div>
+    );
+}
 }
 
 const mapDispatchToProps = dispatch => ({

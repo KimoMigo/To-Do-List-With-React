@@ -1,5 +1,29 @@
-.tasks-list{
-    width: 80%;
+.tasks{
+    width: 60%;
     margin: 10px auto;
     display: flex;
+    flex-direction: column;
+}
+.tasks .list-header{
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid #abc
+}
+.tasks .list-header .task-description{
+    width: 60%;
+}
+.tasks .list-header .task-due-time{
+    width: 20%;
+}
+.tasks .list-header .edit{
+    width: 10%;
+}
+.tasks .list-header .remove{
+    width: 10%;
+}
+.tasks .list-header *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
 }

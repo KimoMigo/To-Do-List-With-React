@@ -12,11 +12,15 @@ const Task = ({task, removeTaskFromList,changeEditableState}) => {
     const minutes =dueTime.getMinutes();
     const seconds = dueTime.getSeconds();
     return (
-    <div>
-        <span>{description}</span>
-        <span>{`${hours}:${minutes}:${seconds}`}</span>
-        <button onClick={() => changeEditableState(task)}>Edit</button>
-        <button onClick={() => removeTaskFromList(task)}>Remove</button>
+    <div className='task'>
+        <span className='task-description'>{description}</span>
+        <span className='task-due-time'>{`${hours}:${minutes}:${seconds}`}</span>
+        <div className='edit'>
+            <button onClick={() => changeEditableState(task)}>Edit</button>
+        </div>
+        <div className='remove'>
+            <button onClick={() => removeTaskFromList(task)}>Remove</button>
+        </div>
     </div> 
 )};
 
