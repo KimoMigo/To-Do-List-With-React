@@ -8,8 +8,9 @@ import {removeTaskFromList,changeEditableState} from '../../redux/task/task-acti
 
 const Task = ({task, removeTaskFromList,changeEditableState}) => {
     const {description, dueTime} = task;
+    console.log(dueTime);
     const hours = dueTime.getHours();
-    const minutes =dueTime.getMinutes();
+    const minutes = dueTime.getMinutes();
     const seconds = dueTime.getSeconds();
     return (
     <div className='task'>
