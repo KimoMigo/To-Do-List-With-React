@@ -13,7 +13,7 @@ class EditableTask extends React.Component{
         super(props);
         this.state = {
             description:this.props.task.description,
-            dueTime: this.props.task.dueTime
+            dueTime: new Date(this.props.task.dueTime)
         }
     }
 

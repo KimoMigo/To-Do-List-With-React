@@ -18,7 +18,11 @@ const TasksList = ({tasksList}) => (
         </div>
         <div className='tasks-list'>
             {tasksList
-                .sort((task1,task2) => task1.dueTime.getTime() - task2.dueTime.getTime())
+                .sort((task1,task2) => {
+                const dueTime1 = new Date(task1.dueTime);
+                const dueTime2 = new Date(task2.dueTime);
+                return (dueTime1.getTime() - dueTime2.getTime());
+            })
                 .map(task=> !task.editable 
                            ? (<Task key={task.id} task={task}/>)
                            : <EditableTask key={task.id} task={task}/>)}
